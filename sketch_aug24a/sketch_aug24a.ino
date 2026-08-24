@@ -27,14 +27,5 @@ void loop() {
     
     digitalWrite(LED_PIN, LOW);
     digitalWrite(BOARD_LED_PIN, LOW);
-  }
-  
-  // Read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
-  
-  // Print the value you read to the Serial Monitor:
-  Serial.println(sensorValue);
-  
-  // Delay in between reads for stability
-  delay(100);  
+  }  
 }
