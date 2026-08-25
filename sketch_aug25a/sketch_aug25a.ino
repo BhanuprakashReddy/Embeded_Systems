@@ -1,11 +1,16 @@
 
+//#include <esp32-hal-timer.h>
+
 bool timerFlag = false;
 hw_timer_t * timer = NULL;
 
 //hw_timer_t * timerBegin(uint32_t frequency);
 
 // function call by the timer interruption
-void IRAM_ATTR onTimer() {
+// void IRAM_ATTR onTimer()
+// void ARDUINO_ISR_ATTR onTimer()
+
+void onTimer() { 
     timerFlag = true;
 }
 
@@ -35,8 +40,13 @@ void loop() {
 
   if(timerFlag == true){
     timerFlag = false;
-    Serial.println("[loop]", timerFlag);
-    
+    Serial.print("[loop] timerFlage: ");
+    Serial.println(timerFlag);
+
+    // Formatting numbers
+    //Serial.println(75, BIN);     // Outputs: 1001011
+    //Serial.println(12.3456, 3);  // Outputs: 12.346 (rounds to 3 decimal places)
+  }else {
+    Serial.println("[loop] timerFlage not updated in timer callback.");
   }
-  
 }
