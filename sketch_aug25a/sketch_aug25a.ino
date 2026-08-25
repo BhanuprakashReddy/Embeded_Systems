@@ -12,7 +12,7 @@ void IRAM_ATTR onTimer() {
 void setup() {
   
   // put your setup code here, to run once:
-  Serial.begin(115200); // 9600 -> 115200
+  Serial.begin(115200); // baud rate: 9600 -> 115200
   Serial.println("[setup] Start...");
   
   // Timer initialisation at a frequency of 1 MHz (1 µs per tick)
