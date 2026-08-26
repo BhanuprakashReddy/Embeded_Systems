@@ -1,0 +1,1 @@
+embedded C code access, communicate and perform action on Arduino UNO, ESP32 board
