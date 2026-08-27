@@ -3,6 +3,14 @@
 #define LED_DOWN_ARROW  2
 #define LED_BUILTIN     13
 
+enum ElevatorState {
+  IDLE,
+  MOVING,
+  DOOR_OPEN
+};
+
+ElevatorState currentState = IDLE;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
