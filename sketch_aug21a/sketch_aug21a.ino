@@ -24,12 +24,12 @@ void loop() {
   buttonState = digitalRead(switchPin); // pushbutton state
   if(buttonState == HIGH)
   {
-    // Turn LED on:
+    // Turn on LED:
      digitalWrite(3, HIGH);
   }
   else//if(buttonState == 0)
   {
-    // Turn LED off:
+    // Turn off LED:
     digitalWrite(3, LOW);
   }
 }

@@ -40,5 +40,10 @@ void loop() {
       digitalWrite(LED_UP_ARROW, LOW);
     }
     currenPosition = targetPosition;
+  } else if(currenPosition == targetPosition) {
+    Serial.println("[loop] Pls press which floor need to go?");
+  } else {
+    Serial.println("[loop] Pls check elevator doors are closed properly?");
   }
+
 }

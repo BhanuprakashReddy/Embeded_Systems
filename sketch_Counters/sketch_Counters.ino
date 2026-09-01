@@ -1,7 +1,7 @@
 /*************************************************
 Counter implementation with help of timers
 *************************************************/
-#define LED_BUILTIN 2            // 2 PIN in ESP32, 13 Pin in Arduino
+#define LED_BUILTIN 2            // PIN 2 in ESP32, PIN 13 in Arduino.
 #define DEFAULT_COUNTER_RESET 10  
 
 int nCounter = 0;
@@ -13,7 +13,7 @@ bool nFlag = false;
 hw_timer_t *timer = NULL;
 
 // Timer callback function
-void ARDUINO_ISR_ATTR onTimer(){
+void ARDUINO_ISR_ATTR onTimer() {
   nCounter++;
   nFlag = true;
 }
@@ -24,8 +24,10 @@ void setup() {
 
   pinMode(LED_BUILTIN, OUTPUT);
 
+  timer = timerBegin(100000);
   if(timer == NULL){
-    timer = timerBegin(100000);
+    Serial.println("[setup] Error with the start of the timer");
+    while (1);
    }
    
   timerAttachInterrupt(timer, &onTimer);
