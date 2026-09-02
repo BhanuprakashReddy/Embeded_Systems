@@ -8,8 +8,10 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 
+  // The most common configuration in modern electronics is 8N1
+  // (8 data bits, No parity, 1 stop bit).
+  // Note: Arduino UNO is a Rx=10, Tx=11
   uartSerial.begin(9600, SERIAL_8N1, 16, 17); // Rx=16, Tx=17
-  // Note: Arduino UNO is a // Rx=10, Tx=11
 }
 
 void loop() {
