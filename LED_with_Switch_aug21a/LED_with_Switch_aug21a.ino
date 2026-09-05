@@ -1,4 +1,7 @@
+// LED glow with user input switch
+
 #define switchPin 2  // The number of the pushbutton pin
+
 const int ledPin =  3;// The number of the LED pin
 int buttonState = 0;  // Variable for reading the pushbutton status
 

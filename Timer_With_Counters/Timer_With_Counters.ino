@@ -26,7 +26,7 @@ void setup() {
 
   timer = timerBegin(100000);
   if(timer == NULL){
-    Serial.println("[setup] Error with the start of the timer");
+    Serial.println("[setup] Error with the start of the timer.");
     while (1);
    }
    

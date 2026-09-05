@@ -1,3 +1,4 @@
+// Basic timer implementation
 
 bool timerFlag = false;
 hw_timer_t * timer = NULL;
@@ -23,7 +24,6 @@ void setup() {
   
   // Timer initialisation at a frequency of 1 MHz (1 µs per tick)
   timer = timerBegin(100000);
-  
   if (timer == NULL) {
     Serial.println("[setup] Error with the start of the timer");
     while (1);

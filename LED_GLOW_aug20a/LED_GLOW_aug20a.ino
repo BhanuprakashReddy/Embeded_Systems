@@ -1,13 +1,14 @@
-//#define LED 2 // Configured in digitalPin
-#define LED 13  //->LED which is integrated in Arduino UNO board.
+// LED glow with Arduino UNO board
+#define LED_1 2 // Configured in digitalPin
+#define LED_2 13  //->LED which is integrated in Arduino UNO board.
 int count;
 
 void setup() {
   // put your setup code here, to run once:
 
   // Serial.begin(9600);
-  pinMode(LED, OUTPUT);
-  pinMode(2, OUTPUT);
+  pinMode(LED_1, OUTPUT);
+  pinMode(LED_2, OUTPUT);
 }
 
 void loop() {
@@ -19,18 +20,18 @@ void loop() {
     // For even numbers glows the LED which is integrated in Arduino UNO board.
     if( i%2 == 0)
     {
-      digitalWrite(LED, HIGH);
+      digitalWrite(LED_2, HIGH);
       delay(1000);
-      digitalWrite(LED, LOW);
+      digitalWrite(LED_2, LOW);
       delay(1000);
     }
     
     // For odd numbers LED glow on bread board.
     if( i%2 != 0)
     {
-      digitalWrite(2, HIGH);
+      digitalWrite(LED_1, HIGH);
       delay(1000);
-      digitalWrite(2, LOW);
+      digitalWrite(LED_1, LOW);
       delay(5000);
     }
   }

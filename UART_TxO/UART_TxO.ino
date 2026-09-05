@@ -31,8 +31,8 @@ void loop() {
   delay(1000);
 
   if(uartSerial.available()) {
-    //char recdMsg = uartSerial.read();
-    String recdMsg = uartSerial.readString();
+    //char recdMsg = uartSerial.read();       // Read the one byte char
+    String recdMsg = uartSerial.readString(); 
     Serial.print("Received Message:");
     Serial.println(recdMsg);
   } else {
